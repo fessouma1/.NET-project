@@ -1,0 +1,9 @@
+C:\Users\air5b\OneDrive\Desktop\js tutorial\.Net-project\MovieManagement.dataAccess\bin\Debug\MovieManagement.dataAccess.dll
+C:\Users\air5b\OneDrive\Desktop\js tutorial\.Net-project\MovieManagement.dataAccess\bin\Debug\MovieManagement.dataAccess.pdb
+C:\Users\air5b\OneDrive\Desktop\js tutorial\.Net-project\MovieManagement.dataAccess\obj\Debug\MovieManagement.dataAccess.csprojAssemblyReference.cache
+C:\Users\air5b\OneDrive\Desktop\js tutorial\.Net-project\MovieManagement.dataAccess\obj\Debug\MovieManagement.dataAccess.csproj.CoreCompileInputs.cache
+C:\Users\air5b\OneDrive\Desktop\js tutorial\.Net-project\MovieManagement.dataAccess\obj\Debug\MovieManagement.dataAccess.dll
+C:\Users\air5b\OneDrive\Desktop\js tutorial\.Net-project\MovieManagement.dataAccess\obj\Debug\MovieManagement.dataAccess.pdb
+C:\Users\air5b\OneDrive\Desktop\js tutorial\.Net-project\MovieManagement.dataAccess\bin\Debug\MovieManagement.datacontract.dll
+C:\Users\air5b\OneDrive\Desktop\js tutorial\.Net-project\MovieManagement.dataAccess\bin\Debug\MovieManagement.datacontract.pdb
+C:\Users\air5b\OneDrive\Desktop\js tutorial\.Net-project\MovieManagement.dataAccess\obj\Debug\MovieManagement.dataAccess.csproj.CopyComplete
