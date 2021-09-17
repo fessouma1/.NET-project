@@ -1,0 +1,62 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="MovieDBModelStoreContainer" CdmEntityContainer="MovieDBEntities">
+    <EntitySetMapping Name="Categories">
+      <EntityTypeMapping TypeName="MovieDBModel.Category">
+        <MappingFragment StoreEntitySet="Categories">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Employees">
+      <EntityTypeMapping TypeName="MovieDBModel.Employee">
+        <MappingFragment StoreEntitySet="Employee">
+          <ScalarProperty Name="EmployeeID" ColumnName="EmployeeID" />
+          <ScalarProperty Name="EmployeeName" ColumnName="EmployeeName" />
+          <ScalarProperty Name="EmployeeAddress" ColumnName="EmployeeAddress" />
+          <ScalarProperty Name="License_Number" ColumnName="License_Number" />
+          <ScalarProperty Name="Passport_Number" ColumnName="Passport_Number" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Movies">
+      <EntityTypeMapping TypeName="MovieDBModel.Movy">
+        <MappingFragment StoreEntitySet="Movies">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="ReleaseDate" ColumnName="ReleaseDate" />
+          <ScalarProperty Name="Length" ColumnName="Length" />
+          <ScalarProperty Name="Rating" ColumnName="Rating" />
+          <ScalarProperty Name="AverageScore" ColumnName="AverageScore" />
+          <ScalarProperty Name="Categoryid" ColumnName="Categoryid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Reviews">
+      <EntityTypeMapping TypeName="MovieDBModel.Review">
+        <MappingFragment StoreEntitySet="Review">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="Score" ColumnName="Score" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Salaries">
+      <EntityTypeMapping TypeName="MovieDBModel.Salary">
+        <MappingFragment StoreEntitySet="Salary">
+          <ScalarProperty Name="Employe_ID" ColumnName="Employe_ID" />
+          <ScalarProperty Name="Salary_Month_Year" ColumnName="Salary_Month_Year" />
+          <ScalarProperty Name="amount" ColumnName="amount" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <AssociationSetMapping Name="Moviereview" TypeName="MovieDBModel.Moviereview" StoreEntitySet="Moviereview">
+      <EndProperty Name="Movies">
+        <ScalarProperty Name="id" ColumnName="Movieid" />
+      </EndProperty>
+      <EndProperty Name="Review">
+        <ScalarProperty Name="id" ColumnName="Reviewid" />
+      </EndProperty>
+    </AssociationSetMapping>
+  </EntityContainerMapping>
+</Mapping>

@@ -1,0 +1,82 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="MovieDBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Category">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Guid" Nullable="false" />
+    <Property Name="Name" Type="String" MaxLength="100" FixedLength="true" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="Movies" Relationship="Self.FK_Movies_Categories" FromRole="Categories" ToRole="Movies" />
+  </EntityType>
+  <EntityType Name="Employee">
+    <Key>
+      <PropertyRef Name="EmployeeID" />
+    </Key>
+    <Property Name="EmployeeID" Type="Int32" Nullable="false" />
+    <Property Name="EmployeeName" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="EmployeeAddress" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="License_Number" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="Passport_Number" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Movy">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Guid" Nullable="false" />
+    <Property Name="Title" Type="String" MaxLength="400" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="ReleaseDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Length" Type="Int32" Nullable="false" />
+    <Property Name="Rating" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="AverageScore" Type="Double" />
+    <Property Name="Categoryid" Type="Guid" />
+    <NavigationProperty Name="Category" Relationship="Self.FK_Movies_Categories" FromRole="Movies" ToRole="Categories" />
+    <NavigationProperty Name="Review" Relationship="Self.Moviereview" FromRole="Movies" ToRole="Review" />
+  </EntityType>
+  <EntityType Name="Review">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Guid" Nullable="false" />
+    <Property Name="Score" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Movies" Relationship="Self.Moviereview" FromRole="Review" ToRole="Movies" />
+  </EntityType>
+  <EntityType Name="Salary">
+    <Key>
+      <PropertyRef Name="Employe_ID" />
+    </Key>
+    <Property Name="Employe_ID" Type="Int32" Nullable="false" />
+    <Property Name="Salary_Month_Year" Type="DateTime" Precision="0" />
+    <Property Name="amount" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <Association Name="FK_Movies_Categories">
+    <End Role="Categories" Type="Self.Category" Multiplicity="0..1" />
+    <End Role="Movies" Type="Self.Movy" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Categories">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Movies">
+        <PropertyRef Name="Categoryid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="Moviereview">
+    <End Role="Movies" Type="Self.Movy" Multiplicity="*" />
+    <End Role="Review" Type="Self.Review" Multiplicity="0..1" />
+  </Association>
+  <EntityContainer Name="MovieDBEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Categories" EntityType="Self.Category" />
+    <EntitySet Name="Employees" EntityType="Self.Employee" />
+    <EntitySet Name="Movies" EntityType="Self.Movy" />
+    <EntitySet Name="Reviews" EntityType="Self.Review" />
+    <EntitySet Name="Salaries" EntityType="Self.Salary" />
+    <AssociationSet Name="FK_Movies_Categories" Association="Self.FK_Movies_Categories">
+      <End Role="Categories" EntitySet="Categories" />
+      <End Role="Movies" EntitySet="Movies" />
+    </AssociationSet>
+    <AssociationSet Name="Moviereview" Association="Self.Moviereview">
+      <End Role="Movies" EntitySet="Movies" />
+      <End Role="Review" EntitySet="Reviews" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
