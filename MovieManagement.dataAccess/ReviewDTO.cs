@@ -8,5 +8,7 @@ namespace MovieManagement.dataAccess
 {
     class ReviewDTO
     {
+        public Guid Id { get; set; }
+        public float Score { get; set; }
     }
 }

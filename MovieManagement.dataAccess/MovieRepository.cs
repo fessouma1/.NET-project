@@ -40,7 +40,7 @@ namespace MovieManagement.dataAccess
             }
         }
 
-        public void UpdateCategory(Movy updatedMovy)
+        public void UpdateMovie(Movy updatedMovy)
         {
 
             var existingMovy = DBContext.Movies.FirstOrDefault(a => a.id == updatedMovy.id);

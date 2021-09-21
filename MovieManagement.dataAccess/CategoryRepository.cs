@@ -20,7 +20,13 @@ namespace MovieManagement.dataAccess
                 return category;
             
         }
+        public Category GetCategoryByName(String name)
+        {
 
+            var lowerCaseName = name.ToLower();
+            var category = DBContext.Categories.FirstOrDefault(a => a.Name.ToLower().Contains(lowerCaseName));
+            return category;
+        }
         public void AddCategory(Category NewCategory)
         {
 

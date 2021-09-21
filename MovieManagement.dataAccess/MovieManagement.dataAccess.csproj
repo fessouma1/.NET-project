@@ -57,6 +57,7 @@
     <Compile Include="Category.cs">
       <DependentUpon>MovieDB.tt</DependentUpon>
     </Compile>
+    <Compile Include="CategoryDTO.cs" />
     <Compile Include="CategoryRepository.cs" />
     <Compile Include="Class1.cs" />
     <Compile Include="Employee.cs">
@@ -85,6 +86,7 @@
     <Compile Include="Review.cs">
       <DependentUpon>MovieDB.tt</DependentUpon>
     </Compile>
+    <Compile Include="ReviewDTO.cs" />
     <Compile Include="ReviewRepository.cs" />
     <Compile Include="Salary.cs">
       <DependentUpon>MovieDB.tt</DependentUpon>

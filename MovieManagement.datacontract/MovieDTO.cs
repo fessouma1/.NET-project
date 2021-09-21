@@ -11,7 +11,7 @@ namespace MovieManagement.datacontract
         public string title { get; set; }
         public DateTime ReleaseDate { get; set; }
         public int Length { get; set; }
-        public double AverageScore { get; set; }
+        public float AverageScore { get; set; }
         public string CategoryName { get; set; }
         public string Rating { get; set; }
         public Guid Id { get; set; }
